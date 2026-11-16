@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StockApp.Tests/StockApp.Tests.csproj" />
+  <Project Path="StockApp/StockApp.csproj" />
+</Solution>
