@@ -56,4 +56,18 @@ public sealed class StockServiceTests
 
         Assert.AreEqual(5, item.Quantity);
     }
+
+    [TestMethod]
+    [DataRow("")]
+    [DataRow("   ")]
+    public void StockItem_WhenNameIsEmpty_ThrowsArgumentException(string name)
+    {
+        Assert.ThrowsExactly<ArgumentException>(() => new StockItem(name));
+    }
+
+    [TestMethod]
+    public void StockItem_WhenInitialQuantityIsNegative_ThrowsArgumentOutOfRangeException()
+    {
+        Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new StockItem("Clavier", -1));
+    }
 }
